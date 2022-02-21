@@ -7,12 +7,12 @@ Implement an algorithm for assigning seats within a movie theater to fulfill res
 The algorithm follows following rules:
 1. The algorithm is developed for one screen for the layout where, row J is farthest from the screen and A is the closest to the screen.
 2. Customers that come first will be allocated seats starting from the back/top row(First come first serve). If seats are available in any of the top rows, then, they will be allotted keeping a gap of atleast 3 seats in the same row.
-3. For the purpose of public safety, alternate rows have already been marked as unavailable before reservations are even accepted.
+3. For the purpose of public safety, alternate rows have already been marked as unavailable.
 4. Each group will be allocated seats in a single row. Try to keep reservation parties together, however, if seats are not available in a single row, then, inform the customer about insufficient seats.
-5. We assume that the maximum seats a customer can request cannot be greater than the total number of seats in the screen's row(For example, user cannot request more than 20 seats). 
+5. We assume that the maximum seats a customer can request cannot be greater than the maximum number of seats in the screen's row(For example, user cannot request more than 20 seats). 
 6. Full fill as many requests as possible.
 
-### How are the goals of the problem statement achieved?
+### How are the goals of seat allocation achieved?
 
 _Customer Satisfaction:_
 1. Seats will be allotted from the top row for a better viewing appearence.
@@ -35,6 +35,14 @@ javac Main.java
 ```
 java Main C:/Users/Patron/spring/WalmartChallenge/src/com/uwmadison/pnpawar/input.txt
 ```
+
+## Class Design:
+
+1. Main.java: main/driver class for handling the input and output.
+2. Reserve.java: class object stores the information of each reservation made.
+3. Screen.java: class initializes the screen arrangement and stores its information after each reservation is made.
+4. Service.java: class to make a reservation via the _bookSeats_ interface.
+5. TestClass.java: class called to run all the test cases.
 
 ## Sample Input:
 ```
